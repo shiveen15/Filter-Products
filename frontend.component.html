@@ -1,0 +1,28 @@
+<div class="app-container">
+    <div class="heading">
+        <span>{{labels?.heading}}</span>
+    </div>
+    <div class="sub-heading">
+        <span>{{labels?.subHeading}}</span>
+    </div>
+    <div class="filters">
+        <div class="filter-button" *ngFor="let item of labels?.buttons">
+            <button (click)="buttonClicked(item)">{{item.buttonText}}</button>
+        </div>
+    </div>
+    <div class="display-cards">
+        <div class="cards" *ngFor="let list of displayArr">
+            <div class="image">
+                <img src={{list?.image}}>
+            </div>
+            <div class="lower-card">
+                <span class="name">{{list?.description}}</span>
+                <div class="tags" *ngFor="let item of list?.tags">
+                    <span class="tag-id">{{item?.id}}</span>
+                    <br>
+                    <span class="tag-name">{{item?.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
